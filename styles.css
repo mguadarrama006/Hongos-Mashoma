@@ -1,0 +1,175 @@
+/* ==========================
+   PALETA DE COLORES
+   ========================== */
+:root {
+    --verde-oscuro: #2d5a27;
+    --verde-claro: #74a66a;
+    --crema: #f6f4e8;
+    --cafe-claro: #d9c9a3;
+    --gris-suave: #eeeeee;
+    --texto-oscuro: #333333;
+}
+
+/* ==========================
+   ESTILOS GENERALES
+   ========================== */
+body {
+    background-color: var(--crema);
+    color: var(--texto-oscuro);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--verde-oscuro);
+}
+
+/* ==========================
+   NAVBAR
+   ========================== */
+.navbar {
+    background-color: var(--verde-oscuro) !important;
+}
+
+.navbar-brand span,
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--cafe-claro) !important;
+}
+
+/* ==========================
+   CARRUSEL
+   ========================== */
+.carousel-inner img {
+    border-radius: 8px;
+}
+
+.carousel-caption h5 {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* ==========================
+   SECCIONES
+   ========================== */
+section {
+    background-color: var(--crema);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.container.my-5 {
+    background: var(--crema);
+}
+
+/* ==========================
+   TARJETAS (PRODUCTOS)
+   ========================== */
+.card {
+    border: 1px solid var(--verde-claro);
+    border-radius: 10px;
+    background-color: white;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background-color: var(--verde-claro);
+    color: white;
+    font-weight: bold;
+}
+
+/* ==========================
+   BOTONES
+   ========================== */
+.btn-primary {
+    background-color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+}
+
+.btn-primary:hover {
+    background-color: var(--verde-claro);
+    border-color: var(--verde-claro);
+}
+
+.btn-success {
+    background-color: var(--verde-claro);
+    border-color: var(--verde-claro);
+}
+
+.btn-btn-success,
+.btn-warming {
+    background-color: var(--cafe-claro);
+    border-color: var(--cafe-claro);
+    color: #333;
+}
+
+.btn-danger {
+    background-color: #b6312d;
+}
+
+/* ==========================
+   INTERACCIONES
+   ========================== */
+#cuadroColor {
+    transition: background-color .3s ease;
+}
+
+#cuadroColor:hover {
+    background-color: var(--verde-claro);
+    color: white;
+}
+
+/* ==========================
+   FORMULARIOS
+   ========================== */
+.form-control,
+.form-select {
+    border: 1px solid var(--verde-claro);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--verde-oscuro);
+    box-shadow: 0 0 5px rgba(45, 90, 39, 0.5);
+}
+
+/* ==========================
+   WHATSAPP FLOTANTE
+   ========================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform .3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================
+   FOOTER
+   ========================== */
+footer {
+    background-color: var(--verde-oscuro) !important;
+    color: white;
+}
+
+footer a:hover {
+    color: var(--cafe-claro) !important;
+}
