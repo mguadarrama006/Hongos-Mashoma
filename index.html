@@ -3,538 +3,794 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mashoma - Venta de Hongos</title>
-    <meta name="Description" content="Venta de hongos y hortalizas frescas.">
-    <meta name="author" content="Lupita">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="styles.css">
+    <title>Mashoma</title>
+    <meta name=" Description " content="Venta de hongos y hortalizas frescas, cultivadas de forma sostenible. Calidad natural directo del productor a tu mesa.">
+    <meta name="keywords" content="hongos comestibles, setas gourmet, venta de hongos frescos, champiñones, hongos ostra, cultivo de hongos, productos orgánicos">
+    <meta name=" author" content=" Lupita">
+    <meta name=" copyright" content=" Lupita 2025">
+    <meta name=" aplication-name" content=" Hongos Mashoma">
+    <!-- Boostrap CSS CDN-->
+    <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel=" stylesheet">
+    <!-- CSS-->
+     <link rel=" stylesheet" href=" styles.css">
+     <style>
+  .agregar-carrito {
+    background-color: #8B5E3C !important; 
+    color: white !important;
+    border: none;
+  }
+  .agregar-carrito:hover {
+    background-color: #704A31 !important;
+  }
+</style>
 
-    <style>
-        /* ================= ESTILOS DEL CARRITO TIPO APP ================= */
-        .carrito-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
-        }
-        .carrito-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-            object-fit: cover;
-            margin-right: 15px;
-            border: 1px solid #ddd;
-        }
-        .carrito-detalles {
-            flex-grow: 1;
-        }
-        .carrito-titulo {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        .carrito-controles {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .btn-cantidad {
-            width: 28px;
-            height: 28px;
-            border: 1px solid #ccc;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-        .btn-cantidad:hover {
-            background: #f0f0f0;
-        }
-        .btn-quitar {
-            font-size: 11px;
-            color: #dc3545;
-            background: none;
-            border: 1px solid #dc3545;
-            border-radius: 4px;
-            padding: 2px 6px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        .btn-quitar:hover {
-            background: #dc3545;
-            color: white;
-        }
-        .carrito-precio-info {
-            text-align: right;
-            font-size: 13px;
-            min-width: 70px;
-        }
-        .carrito-footer {
-            border-top: 1px solid #ddd;
-            padding-top: 20px;
-            background-color: #f8f9fa;
-        }
-        .btn-whatsapp-carrito {
-            background-color: #25D366;
-            color: white;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-        .btn-whatsapp-carrito:hover {
-            background-color: #1ebc57;
-            color: white;
-        }
-        
-        /* Botón flotante del carrito */
-        .btn-flotante-carrito {
-            position: fixed;
-            bottom: 90px; /* Un poco arriba del de WhatsApp original */
-            right: 20px;
-            z-index: 1050;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #2f6b2f; /* Verde oscuro */
-            color: white;
-            border: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-    </style>
+
+
+     <!--========= BANNER PROMOCIONAL =========-->  
+<div id="banner" class="p-3 text-white text-center bg-danger">
+  <!-- chicos: este banner será manipulado con getElementById -->
+  Banner de promoción: ¡Registrate ahora y obtén un 20% de descuento
+  en todos nuestros productos!
+</div>
+
 </head>
-<body>
+<!--=========NAVBAR========
+Chicos menú superior, se vuelve botón hamburguesa en móviles-->
+<nav class=" navbar navbar-expand-lg bg-body-tertiary sticky-top"aria-label=" Navegación principal">
+  <div class="container">
+    <a class="navbar-brand" d-flex align-items-center href="#">
+      <!-- Logo de mi marca-->
+       <img src="img/Mas.png" height="30" class=" align-text-top me-2" alt="Logo de mi marca">
+    <span class=" fw-semibold"> Hongos Mashoma </span>
+   </a>
+   <!-- Botón hamburguesa-->
+    <button class=" navbar-toggler" type=" button" data-bs-toggle=" collapse" data-bs-target="#mainNavbar" aria-expanded=" false" aria-label=" Alternar Navegación">
+      <span class=" navbar-toggler-icon"></span>
+      </button>
+    <!-- Enlaces del menu-->
+     <div class=" collapse navbar-collapse" id=" mainNavbar">
+      <ul class=" navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class=" nav-item"><a class="nav-link active" aria-current="page" href="#"> Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Productos"> Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Contacto"> Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#agregar-imagen"> Agregar imagen </a></li>
+        </ul>
+      </div>
+     </div>
+  </nav>
 
-    <div id="banner" class="p-3 text-white text-center bg-danger">
-      Banner de promoción: ¡Registrate ahora y obtén un 20% de descuento en todos nuestros productos!
+  <!-- ============== CARRUSEL VAMOS A AGREGAR IMAGENES A NUESTRA PAGINA/MARCA =============-->
+   <div id="mainCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCorousel" data-bs-slide-to="0"
+      class="active" aria aria-current="true" aria-label="Slide 1"></button> 
+      <button type="button" data-bs-target="#mainCorousel" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCorousel" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
     </div>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" aria-label="Navegación principal">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-           <img src="img/Mas.png" height="30" class="align-text-top me-2" alt="Logo">
-           <span class="fw-semibold">Hongos Mashoma</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNavbar">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#Productos">Productos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#Contacto">Contacto</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold text-success" href="#" onclick="abrirCarrito()"> Ver Carrito <i class="fas fa-shopping-cart"></i></a></li>
-          </ul>
+      <div class="carousel-inner rouded-3 shadow - sm">
+        <div class="carousel-item active">
+        <img src="img/blanca.png" class="d-block w-100" alt="Hongo Seta blanco" style="height: 380px;object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block text start">
+          <h5> Hongo seta blanco</h5>
+          <p> Conoce más acerca de este producto.</p>
+          <a href="#Hongos gourmet" class="btn btn-primary"> Ver más.</a>
+          </div>
         </div>
-      </div>
-    </nav>
-
-    <div id="mainCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button> 
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
-        </div>
-        <div class="carousel-inner rounded-3 shadow-sm">
-            <div class="carousel-item active">
-                <img src="img/blanca.png" class="d-block w-100" alt="Hongo Seta blanco" style="height: 380px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Hongo seta blanco</h5>
-                    <p>Conoce más acerca de este producto.</p>
-                </div>
+        <!-- Slide 2-->
+        <div class="carousel-item">
+          <img src="img/Gemini_Generated_Image_hnvz6vhnvz6vhnvz.png" class="d-block w-100" alt="Hongo Seta Gris" style="height: 380px;object-fit: cover;">
+          <div class="carousel-caption d-none d-md-block">
+            <h5> Hongo seta gris</h5>
+            <p> Conoce más acerca de este producto.</p>
+            <a href=" #Hongos gourmet" class="btn btn-light byn-sm"> Ver más.</a>
             </div>
-            <div class="carousel-item">
-                <img src="img/Gemini_Generated_Image_hnvz6vhnvz6vhnvz.png" class="d-block w-100" alt="Hongo Seta Gris" style="height: 380px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Hongo seta gris</h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/Gemini_Generated_Image_jq7ztpjq7ztpjq7z.png" class="d-block w-100" alt="Champiñones" style="height: 380px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Champiñones</h5>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <img src="img/Gemini_Generated_Image_jq7ztpjq7ztpjq7z.png" class="d-block w-100" alt="Champiñones" style="height: 380px;object-fit: cover;" >
+            <div class="carousel-caption d-none d-md-block text-end">
+              <h5> Champiñones</h5>
+              <p> Conoce más acerca de este producto.</p>
+              <button class="btn btn-danger btn-sm" data-bs-target="#Hongos frescos">
+                Más información</button>
                 </div>
             </div>
         </div>  
-    </div>  
+       </div>  
+       <!-- ================ SECCIÓN PRINCIPAL ===================--> 
+  <section class=" container my-5">
+    <h1 class=" text-center mb-4"> Bienvenidos a Hongos Mashoma</h1>
+    <p class="text-center lead">Ofrecemos hongos comestibles frescos y de alta calidad, cultivados de forma sostenible. Perfectos para chefs, restaurantes y amantes de la cocina que buscan un toque único y saludable en cada platillo.</p>
+   </section>
 
-    <section class="container my-5">
-        <h1 class="text-center mb-4">Bienvenidos a Hongos Mashoma</h1>
-        <p class="text-center lead">Ofrecemos hongos comestibles frescos y de alta calidad.</p>
-        
-        <div class="alert alert-info mt-4" role="alert">
-            ¡Atento a nuestras novedades! Muy pronto nuevos hongos gourmet.
-        </div>
+  <!-- ============== BOTONES ==============
+   <section class=" container my-5">
+    <h2> Botones (Buttons)</h2>
+    <button class="btn btn-primary">Primario</button>
+    <button class="btn btn-secondary">Secundario</button>
+    <button class="btn btn-success">Éxito</button>
+    <button class="btn btn-danger">Peligro</button>
+    <button class="btn btn-warning">Advertencia</button>
+    ===================================================== -->
+   </section>
+
+ <!-- ===================== ALERTAS =================-->
+    <section class=" container my-5">
+      <h2> Alertas (Alerts)</h2>
+      <div class="alert alert-info" role="alert">
+        ¡Atento a nuestras novedades!
+        Muy pronto nuevos hongos y productos gourmet frescos. ¡No te los pierdas!
+      </div>
     </section>
     
-    <section class="container my-5" id="Productos">
-      <h2 class="mb-4 text-center">Nuestros Productos</h2>
-      <div class="row g-4">
-        
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="img/blanca.png" class="card-img-top" alt="Hongo Seta Blanco" style="height: 220px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Hongo Seta Blanco</h5>
-              <p class="card-text">Setas frescas de alta calidad, directo del cultivo.</p>
-              <h4 class="text-success mt-auto mb-3">$50.00 MXN</h4>
-              <button class="btn btn-primary w-100" onclick="agregarAlCarrito(1, 'Hongo Seta Blanco', 50, 'img/blanca.png')">
-                <i class="fas fa-cart-plus"></i> Agregar al carrito
-              </button>
-            </div>
-          </div>
+   <!-- ============= TARJETAS ===============-->
+<section class="container my-5" id="Productos">
+  <h2 class="mb-4">Productos principales</h2>
+  <div class="row g-4">
+    
+    <!-- Tarjeta básica -->
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Hongo Seta Blanco</h5>
+          <p class="card-text">Setas frescas de alta calidad, directo del cultivo a tu mesa.</p>
+          <a href="#" class="btn btn-primary">Más información</a>
+          <button class="btn btn-success agregar-carrito" 
+        data-nombre="Hongo Seta Blanco" 
+        data-precio="50"
+        data-img="img/blanca.png">
+  Agregar al carrito
+</button>
+
         </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="img/Captura de pantalla 2025-11-13 081752.png" class="card-img-top" alt="Hongos Seta Gris" style="height: 220px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Hongos Seta Gris</h5>
-              <p class="card-text">Frescos y de sabor suave, ideales para salteados.</p>
-              <h4 class="text-success mt-auto mb-3">$55.00 MXN</h4>
-              <button class="btn btn-primary w-100" onclick="agregarAlCarrito(2, 'Hongo Seta Gris', 55, 'img/Captura de pantalla 2025-11-13 081752.png')">
-                <i class="fas fa-cart-plus"></i> Agregar al carrito
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-header bg-warning">Nuevo producto</div>
-            <img src="img/Gemini_Generated_Image_jq7ztpjq7ztpjq7z.png" class="card-img-top" alt="Champiñones" style="height: 185px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Champiñones</h5>
-              <p class="card-text">Versátiles y deliciosos para cualquier platillo.</p>
-              <h4 class="text-success mt-auto mb-3">$85.00 MXN</h4>
-              <button class="btn btn-success w-100" onclick="agregarAlCarrito(3, 'Champiñones', 85, 'img/Gemini_Generated_Image_jq7ztpjq7ztpjq7z.png')">
-                <i class="fas fa-cart-plus"></i> Agregar al carrito
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="container my-5" id="Contacto">
-        <h2 class="mb-4">Contáctanos</h2>
-        <div class="card border-secondary" style="max-width: 25rem; background-color: #f8f9fa;">
-            <div class="card-header bg-secondary text-white">Información</div>
-            <div class="card-body text-dark">
-                <h5 class="card-title">¿Tienes dudas?</h5>
-                <ul class="list-unstyled mb-3">
-                    <li>📞 55-1234-5678</li>
-                    <li>📧 contacto@hongosgourmet.com</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="container my-5">
-        <h2>Testimonios</h2>
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                 <div class="d-flex align-items-start p-3 border rounded shadow-sm">
-                    <img src="img/imagen 4.png" class="rounded-circle me-3" width="60" height="60" alt="Cliente">
-                    <div>
-                        <h5 class="mb-1 fw-bold">Cliente VIP</h5>
-                        <p class="mb-0 small">"Excelente calidad y frescura. Recomiendo totalmente."</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <div class="d-flex align-items-start p-3 border rounded shadow-sm">
-                   <img src="img/imagen 1.png" class="rounded-circle me-3" width="60" height="60" alt="Cliente">
-                   <div>
-                       <h5 class="mb-1">Cliente Regular</h5>
-                       <p class="mb-0 small">"Llegan a tiempo y muy ricos."</p>
-                   </div>
-               </div>
-           </div>
-        </div>
-    </section>
-
-    <section id="agregar-imagen" class="container my-5 border-top pt-5">
-      <h4>Zona Interactiva: Agregar Imágenes</h4>
-      <div class="input-group mb-3">
-        <input type="text" id="inputImagen" class="form-control" placeholder="URL de la imagen">
-        <button id="btnAgregarImagen" class="btn btn-primary">Agregar</button>
-      </div>
-      <div id="galeria" class="row g-3"></div>
-    </section>
-
-    <section id="lista-warrior" class="container my-5">
-        <h4>Lista de pendientes Merka Warrior</h4>
-        <button id="btnEliminarPrimero" class="btn btn-danger btn-sm mb-3">Eliminar 1ra Tarea</button>
-        <ul id="listaTareas" class="list-group mb-3">
-            <li class="list-group-item">Seta blanca Agranel</li>
-            <li class="list-group-item">Seta gris agranel</li>
-        </ul>
-        <div class="input-group">
-            <input id="inputNuevaTarea" type="text" class="form-control" placeholder="Nueva tarea">
-            <button id="btnAgregarTarea" type="button" class="btn btn-success">Agregar</button>
-        </div>
-    </section>
-
-
-    <button onclick="abrirCarrito()" class="btn-flotante-carrito">
-        <i class="fas fa-shopping-basket"></i>
-        <span id="contadorFlotante" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 12px;">0</span>
-    </button>
-
-    <a href="https://wa.me/527221234567" class="whatsapp-float" target="_blank">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-
-
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffcanvas" aria-labelledby="carritoLabel">
-      <div class="offcanvas-header bg-success text-white">
-        <h5 class="offcanvas-title" id="carritoLabel"> <i class="fas fa-shopping-cart"></i> Tu Pedido</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      
-      <div class="offcanvas-body bg-light">
-        <div id="listaCarrito">
-            <div class="text-center mt-5 text-muted">
-                <i class="fas fa-mushroom fa-3x mb-3"></i>
-                <p>Tu carrito está vacío.</p>
-                <p class="small">Agrega hongos deliciosos para comenzar.</p>
-            </div>
-        </div>
-      </div>
-
-      <div class="offcanvas-footer p-3 carrito-footer">
-        <div class="d-flex justify-content-between mb-3 align-items-end">
-            <span class="fw-bold text-secondary">Total a pagar:</span>
-            <span class="fw-bold fs-4 text-dark" id="totalPrecio">$0.00</span>
-        </div>
-        <button class="btn-whatsapp-carrito shadow-sm" onclick="enviarPedidoWhatsApp()">
-            <i class="fab fa-whatsapp fa-lg"></i> Finalizar pedido en WhatsApp
-        </button>
       </div>
     </div>
 
+    <!-- Tarjeta con imagen -->
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="img/Captura de pantalla 2025-11-13 081752.png" class="card-img-top" alt="Hongos Seta">
+        <div class="card-body">
+          <h5 class="card-title">Hongos Seta Gris</h5>
+          <p class="card-text">Frescos y de sabor suave, ideales para salteados y sopas.</p>
+          <button class="btn btn-success agregar-carrito" 
+        data-nombre="Hongo Seta Gris" 
+        data-precio="55"
+        data-img="img/Captura de pantalla 2025-11-13 081752.png">
+  Agregar al carrito
+</button>
 
-    <footer class="bg-dark text-center text-white py-3 mt-5">
-      © 2025 Lupita | Hongos Mashoma
-      <div class="mt-2">
-        <i class="fab fa-facebook mx-2"></i>
-        <i class="fab fa-instagram mx-2"></i>
+        </div>
       </div>
-    </footer>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // ------------------ LÓGICA DEL CARRITO ------------------
-        let carrito = [];
-        let myOffcanvas = null; // Se inicializa cuando carga el DOM
+    <!-- Tarjeta con encabezado -->
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          Nuevo producto
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Champiñones</h5>
+          <p class="card-text">Versátiles y deliciosos, el ingrediente perfecto para cualquier platillo.</p>
+          <a href="#" class="btn btn-success">Quiero comprar</a>
+        </div>
+        <div class="card-footer">
+          ¡Compra ahora y disfruta!
+          <button class="btn btn-success agregar-carrito" 
+        data-nombre="Champiñones" 
+        data-precio="90"
+        data-img="img/Gemini_Generated_Image_jq7ztpjq7ztpjq7z.png">
+  Agregar al carrito
+</button>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            myOffcanvas = new bootstrap.Offcanvas(document.getElementById('carritoOffcanvas'));
-        });
+        </div>
+      </div>
+    </div>
 
-        function abrirCarrito() {
-            if(myOffcanvas) myOffcanvas.show();
+  </div>
+</section>
+
+<!-- ============= CONTACTO ===============-->
+  <section class="container my-5" id="Contacto">
+    <h2 class="mb-4">Contáctanos</h2>
+    <div class="card border-secondary" style="width: 18rem; background-color: #f8f9fa;">
+      <div class="card-header bg-secondary text-white">
+        Contáctanos
+      </div>
+      <div class="card-body text-dark">
+        <h5 class="card-title">¿Tienes dudas?</h5>
+        <p class="card-text">Escríbenos para pedidos o más información sobre nuestros productos.</p>
+        <ul class="list-unstyled mb-3">
+          <li>📞 55-1234-5678</li>
+          <li>📧 contacto@hongosgourmet.com</li>
+        </ul>
+        <a href="#" class="btn btn-success">Enviar mensaje</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIOS ==================== -->
+   <!-- ======== TESTIMONIOS ======== -->
+<section class="container my-5">
+    <h2>Testimonios de nuestros clientes</h2>
+
+    <!-- Testimonio VIP -->
+    <div class="testimonio-vip d-flex align-items-start mb-4 p-3 border rounded shadow-sm">
+        <!-- Foto o imagen del cliente -->
+        <img src="img/imagen 4.png"
+             alt="Foto de Cliente VIP"
+             class="rounded-circle me-3"
+             width="70"
+             height="70">
+        <!-- Contenido del testimonio -->
+        <div>
+            <h5 class="mb-1 fw-bold">Cliente VIP</h5>
+            <p class="mb-0">
+                "Como cliente VIP, siempre recibo atención rápida y personalizada. La calidad de los productos es excelente y cada pedido llega justo como lo necesito. Recomiendo esta página por su servicio confiable y profesional."
+            </p>
+        </div>
+    </div>
+
+    <!-- Testimonio Regular -->
+<div class="d-flex align-items-start mb-4 p-3 border rounded">
+    <!-- Foto o imagen del cliente -->
+    <img src="img/imagen 1.png"
+         alt="Foto de Cliente Regular"
+         class="rounded-circle me-3"
+         width="70"
+         height="70">
+    <!-- Contenido del testimonio -->
+    <div>
+        <h5 class="mb-1">Cliente Regular</h5>
+        <p class="mb-0">
+            "Soy cliente regular y siempre he recibido buen servicio. Los productos llegan en buen estado y a buen precio. Es una página confiable para mis compras del día a día."
+        </p>
+    </div>
+</div>
+
+ <!-- Testimonio VIP -->
+    <div class="testimonio-vip d-flex align-items-start mb-4 p-3 border rounded shadow-sm">
+        <!-- Foto o imagen del cliente -->
+        <img src="img/imagen 2.png"
+             alt="Foto de Cliente VIP"
+             class="rounded-circle me-3"
+             width="70"
+             height="70">
+        <!-- Contenido del testimonio -->
+        <div>
+            <h5 class="mb-1 fw-bold">Cliente VIP</h5>
+            <p class="mb-0">
+                "Compro aquí desde hace varios meses y todo ha salido bien. El proceso es sencillo y los pedidos llegan a tiempo. Muy práctico para mis compras normales."
+            </p>
+        </div>
+    </div>
+
+    <!-- Testimonio Regular -->
+<div class="d-flex align-items-start mb-4 p-3 border rounded">
+    <!-- Foto o imagen del cliente -->
+    <img src="img/imagen 3.png"
+         alt="Foto de Cliente Regular"
+         class="rounded-circle me-3"
+         width="70"
+         height="70">
+    <!-- Contenido del testimonio -->
+    <div>
+        <h5 class="mb-1">Cliente Regular</h5>
+        <p class="mb-0">
+            "Soy cliente frecuente y siempre quedo satisfecha. Los productos llegan frescos, a buen precio y el servicio es muy atento. Es una opción confiable para mis compras de cada semana."
+        </p>
+    </div>
+</div>
+</section>
+
+  <!-- ==================== NAVS Y TABS ==================== -->
+  <!-- Chicos: Aquí usamos pestañas para mostrar distintos contenidos -->
+  <section class="container my-5">
+    <h2>Navegación por pestañas (Tabs)</h2>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab">Home</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab">Profile</button>
+      </li>
+    </ul>
+    <div class="tab-content mt-3">
+      <div class="tab-pane fade show active" id="home" role="tabpanel">
+        <p>Contenido de la pestaña Home: Bienvenido a Hongos Mashoma.</p>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel">
+        <p>Contenido del perfil: Aquí podrás revisar y gestionar tus pedidos de hongos</p>
+      </div>
+    </div>
+  </section>
+
+          <!-- formulario de inscripción -->
+<section class="container my-5" id="contacto">
+    <h2>Formulario de inscripción</h2>
+
+    <!-- Nombre -->
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre completo</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo">
+    </div>
+
+    <!-- Planes -->
+    <div class="mb-3">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <select class="form select" id="email">
+            <option selected>Elige un producto</option>
+            <option value="1"> Por mayoreo.</option>
+            <option value="2">Por menudeo.</option>
+            <option value="3"> Probar.</option>
+        </select>
+    </div>
+ 
+    <!-- MODALIDAD -->
+          <div class="mb-4">
+            <label class="form-label"> Modalidad </label><br>
+            <input class="form-check-input" type="radio" name="modalidad"
+            id="presencial">
+            <label for="presencial">
+              Presencial </label><br>
+            <input class="form-check-input" type="radio" name="modalidadad"
+              id="online" checked>
+            <label for="online">
+              Online </label>
+          </div>
+
+    <!-- Comentarios -->
+    <div class="mb-3">
+        <label for="mensaje" class="form-label">Comentarios adicionales</label>
+        <textarea class="form-control" id="comentarios" rows="3"
+            placeholder="Escribe tus comentarios aquí"></textarea>
+    </div>
+
+
+  <!-- ==================== MODAL ==================== -->
+  <!-- Chicos: Este modal se activa desde el botón "Más información" -->
+  <div class="modal fade" id="modalIA" tabindex="-1" aria-labelledby="modalIALabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalIALabel">Detalles de Hongo seta blanco</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          En este apartado conocerás las características del Hongo Seta Blanco, sus usos culinarios, propiedades y cómo integrarlo en tus preparaciones para aprovechar al máximo su sabor y frescura.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== OFFCANVAS ==================== -->
+  <!-- Chicos: Este es un menú lateral oculto que se activa con un botón -->
+  <div class="container text-center my-5">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasInfo" aria-controls="offcanvasInfo">
+      Abrir información lateral
+    </button>
+  </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasInfo" aria-labelledby="offcanvasInfoLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasInfoLabel">Más sobre Hongos Mashoma</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p> Descubre más sobre nuestros productos frescos y recetas únicas con ellos.</p>
+      <p>Síguenos en redes para más productos.</p>
+    </div>
+  </div>
+  <!-- ====================== SECCIÓN INTERACTIVA ====================-->
+   <section class="container my-5">
+    <h2 class="mb-4">Interacción con Productos de Hongos y Hortalizas</h2>
+    </section>
+    <!-- onclick-->
+     <section class="container my-5">
+      <h3> Evento onclick</h3>
+      <button class="btn btn-warming" onclick="saludar()">
+        Haz clic para saludar </button>
+        <p id="mensajeOnclick" class="mt-3 fw-bold"></p>
+     </section>
+     <!-- onmouseover--> 
+      <section class="container my-5">
+        <h3> Evento onmouseover</h3> 
+        <div id="cuadroColor()"
+        onmouseover="cambiarColor()"
+        onmouseout="restaurarColor()"
+        class="p-5 text-center border rounded"
+        style="background: #eee;">
+      Para el cursor aquí
+      </div>
+    </section>
+    <!-- onchange -->
+     <section class="container my-5">
+      <h3> Evento onchange</h3>
+      <select id="selectEjemplo" class="form-select w-50"
+      onchange="mostrarSeleccionEjemplo()">
+      <option value="">Selecciona un producto(opción)</option>
+      <option value=" Hongo Seta Blanco"> Hongo Seta Blanco</option>
+      <option value=" Hongo Seta Gris">  Hongo Seta Gris</option>
+      <option value="Champiñones"> Champiñones</option>
+      </select>
+      <p id="textoOnchange" class="mt-3 fw-bold"></p>
+     </section>
+
+     <!-- addEventListener-->
+    <section class="container my-5">
+      <h3> Evento addEventListener</h3>
+      <div class="card shadow-sm" style="width: 20rem;">
+        <img id="cardImagen" class="card-img-top"
+        src="img/blanca.png" alt="Hongo Seta Blanco">
+        <div class="card-body">
+          <h5 class=" cardTitulo"> Seta blanca fresca y lista para cocinar.</h5>
+          <p class=" card-Texto"> Conoce recetas y beneficios de consumir nuestro producto estrella </p>
+          <button id="btnCambiarCard" class="btn-btn-success"> Actualizar información</button>
+         </div>
+       </div>
+     </section>    
+    <!-- ======= NUEVOS SERVICIOS MASHOMA ======== -->
+<section id="talleres-warrior">
+  <h2 class="text-center">Nuevos Planes</h2>
+  <p class="text-center">
+    Descubre nuestros nuevos planes diseñados para que disfrutes y aprendas más sobre hongos comestibles y gourmet.
+  </p>
+
+  <div class="row mt-4">
+
+    <!-- PLAN PREMIUM -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+
+    <img src="img/recetario.png" class="card-img-top" alt="Plan Premium">
+
+    <div class="card-body">
+      <h5 class="card-title">Plan Premium</h5>
+      <p><strong>Precio: $99 MXN</strong></p>
+
+      <p>
+        Acceso a recetas exclusivas, guías de cultivo y contenido educativo 
+        sobre hongos gourmet para toda la familia.
+      </p>
+
+      <button class="btn agregar-carrito"
+        data-nombre="Plan Premium"
+data-precio="99"
+        data-img="img/recetario.png">
+        Seleccionar Plan
+      </button>
+
+      <button class="btn btn-danger mt-2 eliminar-plan">Eliminar Plan</button>
+    </div>
+  </div>
+</div>
+
+    <!-- PLAN BÁSICO -->
+            <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+
+        <img src="img/basico.png" class="card-img-top" alt="Plan Básico">
+
+        <div class="card-body">
+          <h5 class="card-title">Plan Básico</h5>
+          <p><strong>Precio: $49 MXN</strong></p>
+
+          <p>
+            Incluye recetas sencillas, introducción al cultivo de hongos comestibles y
+            consejos prácticos para principiantes.
+          </p>
+
+          <button class="btn agregar-carrito"
+            data-nombre="Plan Básico"
+            data-precio="49"
+            data-img="img/plan-basico.jpg"
+            style="background-color:#8B5E3C; color:white;">
+            Seleccionar Plan
+          </button>
+
+          <button class="btn btn-danger mt-2 eliminar-plan">Eliminar Plan</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAN GOURMET -->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+
+        <img src="img/gourmet.png" class="card-img-top" alt="Plan Gourmet">
+
+        <div class="card-body">
+          <h5 class="card-title">Plan Gourmet</h5>
+          <p><strong>Precio: $149 MXN</strong></p>
+
+          <p>
+            Recetarios avanzados, técnicas profesionales, selección de hongos gourmet
+            y acceso a contenido exclusivo para apasionados de la cocina.
+            </p>
+
+          <button class="btn agregar-carrito"
+            data-nombre="Plan Gourmet"
+            data-precio="149"
+            data-img="img/plan-gourmet.jpg"
+            style="background-color:#8B5E3C; color:white;">
+            Seleccionar Plan
+          </button>
+
+          <button class="btn btn-danger mt-2 eliminar-plan">Eliminar Plan</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+  <!-- ============================================================
+     BOTÓN WHATSAPP FLOTANTE
+=============================================================== -->
+<a
+  href="https://wa.me/527221234567"
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chatea por WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<!-- ===================== IMÁGENES DINÁMICAS ======================================== -->
+<section id="agregar-imagen" class="container my-5">
+  <h2 class="mb-4">Agregar Imágenes Dinámicamente</h2>
+  
+  <div class="input-group mb-3">
+    <input 
+      type="text" 
+      id="inputImagen" 
+      class="form-control" 
+      placeholder="Ingresa la URL de la imagen (ej: https://via.placeholder.com/300)">
+    <button id="btnAgregarImagen" class="btn btn-primary">
+      Agregar Imagen
+    </button>
+  </div>
+
+  <div id="galeria" class="row g-3">
+      </div>
+</section>
+
+<script>
+  // 1. Seleccionamos los elementos del DOM
+  const btnAgregar = document.getElementById('btnAgregarImagen');
+  const inputUrl = document.getElementById('inputImagen');
+  const galeria = document.getElementById('galeria');
+
+  // 2. Agregamos el "escuchador" del clic
+  btnAgregar.addEventListener('click', function() {
+      
+      const url = inputUrl.value;
+
+      // Validar que no esté vacío
+      if (url === "") {
+          alert("Por favor, ingresa una URL válida.");
+          return;
+      }
+
+      // 3. Crear el contenedor de la columna (para que se vea bien en Bootstrap)
+      const colDiv = document.createElement('div');
+      colDiv.className = 'col-12 col-md-4 col-lg-3'; // Ajusta tamaños
+
+      // 4. Crear la imagen
+      const nuevaImagen = document.createElement('img');
+      nuevaImagen.src = url;
+      nuevaImagen.className = 'img-fluid rounded shadow-sm'; // Estilos visuales
+      nuevaImagen.alt = 'Imagen agregada dinámicamente';
+
+      // 5. Manejo de error (si la URL no es una imagen válida)
+      nuevaImagen.onerror = function() {
+          alert("La URL no corresponde a una imagen válida.");
+          colDiv.remove(); // Elimina el espacio si falla
+      };
+
+      // 6. Armar y mostrar
+      colDiv.appendChild(nuevaImagen); // Meter img en div
+      galeria.appendChild(colDiv);     // Meter div en galería
+
+      // 7. Limpiar el input
+      inputUrl.value = '';
+  });
+</script>
+  <!-- Contenedor para las imágenes agregadas -->
+  <div id="galeria" class="row g-3"></div>
+</section>
+
+<!-- ACTIVIDAD: LISTA DE TAREAS PARA MERKA WARRIOR -->
+<section id="lista-warrior" class="container my-5">
+    <h2 class="mb-4">Lista de productos por comprar.</h2>
+    <!-- Botón para eliminar primer elemento -->
+    <button id="btnEliminarPrimero" class="btn btn-danger mb-3">
+        Eliminar Primera Tarea
+    </button>
+    <ul id="listaTareas" class="list-group mb-3">
+        <li class="tarea1 list-group-item"> Seta blanca Agranel </li>
+        <li class="tarea2 list-group-item"> Seta gris agranel </li>
+        <li class="tarea3 list-group-item">Champiñones</li>
+    </ul>
+    <!-- Agregar nueva tarea  -->
+        <div class="input-group mt-3">
+        <input id="inputNuevaTarea" type="text" class="form-control"
+         placeholder="Escribe una nueva tarea" aria-label="Nueva tarea">
+        <button id="btnAgregarTarea" type="button" class="btn btn-success">
+        Agregar Tarea </button>
+        </div>
+</section>
+<script>
+    // Eliminar primera tarea
+    document.getElementById("btnEliminarPrimero").addEventListener("click", function () {
+        const lista = document.getElementById("listaTareas");
+        if (lista.firstElementChild) {
+            lista.firstElementChild.remove();
         }
+    });
 
-        // 1. Agregar producto al carrito
-        function agregarAlCarrito(id, nombre, precio, imagen) {
-            const existe = carrito.find(item => item.id === id);
-            if (existe) {
-                existe.cantidad++;
-            } else {
-                carrito.push({ id, nombre, precio, imagen, cantidad: 1 });
-            }
-            actualizarCarritoHTML();
-            abrirCarrito(); // Feedback inmediato al usuario
+    // Agregar nueva tarea
+    document.getElementById("btnAgregarTarea").addEventListener("click", function () {
+        const texto = document.getElementById("inputNuevaTarea").value.trim();
+
+        if (texto !== "") {
+            const nuevaTarea = document.createElement("li");
+            nuevaTarea.classList.add("list-group-item");
+            nuevaTarea.textContent = texto;
+
+            document.getElementById("listaTareas").appendChild(nuevaTarea);
+
+            // Limpiar el input
+            document.getElementById("inputNuevaTarea").value = "";
         }
+    });
+</script>
+<!-- ==================== CARRITO ==================== -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="carritoCanvas" aria-labelledby="carritoLabel">
+  <div class="offcanvas-header">
+    <h5 id="carritoLabel">Tu carrito</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
 
-        // 2. Renderizar el HTML dentro del Offcanvas
-        function actualizarCarritoHTML() {
-            const lista = document.getElementById('listaCarrito');
-            const totalSpan = document.getElementById('totalPrecio');
-            const contador = document.getElementById('contadorFlotante');
-            
-            lista.innerHTML = '';
-            let total = 0;
-            let totalItems = 0;
+    <ul id="lista-carrito" class="list-group mb-3"></ul>
 
-            if (carrito.length === 0) {
-                lista.innerHTML = `
-                <div class="text-center mt-5 text-muted">
-                    <p>Tu carrito está vacío 🍄</p>
-                </div>`;
-            } else {
-                carrito.forEach(item => {
-                    const subtotal = item.precio * item.cantidad;
-                    total += subtotal;
-                    totalItems += item.cantidad;
+    <h5 class="text-end mt-3">Total: $<span id="totalCarrito">0</span></h5>
 
-                    const div = document.createElement('div');
-                    div.classList.add('carrito-item');
-                    div.innerHTML = `
-                        <img src="${item.imagen}" class="carrito-img" alt="${item.nombre}">
-                        <div class="carrito-detalles">
-                            <div class="carrito-titulo">${item.nombre}</div>
-                            <div class="carrito-controles">
-                                <div class="btn-cantidad" onclick="cambiarCantidad(${item.id}, -1)">-</div>
-                                <span class="fw-bold px-2">${item.cantidad}</span>
-                                <div class="btn-cantidad" onclick="cambiarCantidad(${item.id}, 1)">+</div>
-                                <button class="btn-quitar" onclick="eliminarItem(${item.id})">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="carrito-precio-info">
-                            <div class="fw-bold">$${item.precio}</div>
-                            <div class="text-muted small">Sub: $${subtotal}</div>
-                        </div>
-                    `;
-                    lista.appendChild(div);
-                });
-            }
+    <button class="btn btn-success w-100 mt-3">
+      Comprar por WhatsApp
+    </button>
+  </div>
+</div>
 
-            totalSpan.textContent = `$${total.toFixed(2)}`;
-            contador.textContent = totalItems;
-            
-            // Animación simple del contador
-            contador.classList.add('animate__animated', 'animate__bounce');
-            setTimeout(() => contador.classList.remove('animate__animated', 'animate__bounce'), 1000);
-        }
+<!-- Botón flotante del carrito -->
+<button class="btn btn-primary position-fixed" 
+        style="bottom: 90px; right: 20px;" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#carritoCanvas">
+  🛒 Carrito
+</button>
 
-        // 3. Cambiar cantidad
-        function cambiarCantidad(id, cambio) {
-            const item = carrito.find(i => i.id === id);
-            if (item) {
-                item.cantidad += cambio;
-                if (item.cantidad <= 0) {
-                    eliminarItem(id);
-                } else {
-                    actualizarCarritoHTML();
-                }
-            }
-        }
 
-        // 4. Eliminar Item
-        function eliminarItem(id) {
-            carrito = carrito.filter(item => item.id !== id);
-            actualizarCarritoHTML();
-        }
 
-        // 5. Enviar a WhatsApp
-        function enviarPedidoWhatsApp() {
-            if (carrito.length === 0) {
-                alert("Tu carrito está vacío. Agrega productos primero.");
-                return;
-            }
+<!-- ========================= FOOTER ========================= -->
+<footer class="bg-dark text-center text-white py-3 mt-5">
+  ©️ 2025 Lupita | Sígueme para conocer más de nuestros productos 😎
+  <div class="mt-2">
+    <a href="https://www.facebook.com/tuusuario" target="_blank" rel="noopener"
+       class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
 
-            let mensaje = "Hola Hongos Mashoma 🍄, me gustaría hacer el siguiente pedido:%0A%0A";
-            let total = 0;
+    <a href="https://www.instagram.com/tuusuario" target="_blank" rel="noopener"
+       class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
 
-            carrito.forEach(item => {
-                const subtotal = item.precio * item.cantidad;
-                total += subtotal;
-                mensaje += `▪️ ${item.cantidad} x ${item.nombre} ($${subtotal})%0A`;
+    <a href="https://www.tiktok.com/@tuusuario" target="_blank" rel="noopener"
+       class="text-white me-3"><i class="fab fa-tiktok fa-lg"></i></a>
+
+    <a href="https://www.youtube.com/c/tuusuario" target="_blank" rel="noopener"
+       class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
+
+    <a href="https://x.com/tuusuario" target="_blank" rel="noopener"
+       class="text-white"><i class="fab fa-x-twitter fa-lg"></i></a>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+<script>
+let carrito = [];
+
+// Función para actualizar el carrito en pantalla
+function actualizarCarrito() {
+    const lista = document.getElementById('lista-carrito');
+    const total = document.getElementById('totalCarrito');
+
+    lista.innerHTML = "";
+    let suma = 0;
+
+    carrito.forEach((item, index) => {
+        suma += item.precio * item.cantidad;
+
+        lista.innerHTML += `
+            <li class="list-group-item d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <img src="${item.img}" width="50" class="me-2 rounded">
+                    <div>
+                        <strong>${item.nombre}</strong><br>
+                        <small>$${item.precio} c/u</small>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-light btn-sm" onclick="cambiarCantidad(${index}, -1)">–</button>
+                    <span class="mx-2">${item.cantidad}</span>
+                    <button class="btn btn-light btn-sm" onclick="cambiarCantidad(${index}, 1)">+</button>
+
+                    <button class="btn btn-danger btn-sm ms-2" onclick="eliminarProducto(${index})">
+                      Quitar
+                    </button>
+                </div>
+            </li>
+        `;
+    });
+
+    total.textContent = suma;
+}
+
+// Cambiar cantidad
+function cambiarCantidad(index, cambio) {
+    carrito[index].cantidad += cambio;
+
+    if (carrito[index].cantidad <= 0) {
+        carrito.splice(index, 1);
+    }
+
+    actualizarCarrito();
+}
+
+// Eliminar producto
+function eliminarProducto(index) {
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
+// Escuchar clics de "Agregar al carrito"
+document.querySelectorAll('.agregar-carrito').forEach(boton => {
+    boton.addEventListener('click', () => {
+        const nombre = boton.dataset.nombre;
+        const precio = Number(boton.dataset.precio);
+        const img = boton.dataset.img;
+
+        // Ver si ya existe en el carrito
+        const existente = carrito.find(p => p.nombre === nombre);
+
+        if (existente) {
+            existente.cantidad++;
+        } else {
+            carrito.push({
+                nombre,
+                precio,
+                img,
+                cantidad: 1
             });
-
-            mensaje += `%0A*💰 Total a pagar: $${total} MXN*`;
-            mensaje += `%0A%0AQuedo atento a la confirmación.`;
-            
-            // Número configurado en tu código original
-            const telefono = "527221234567"; 
-            
-            window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
         }
 
-
-        // ------------------ LÓGICA DE IMÁGENES DINÁMICAS (EXISTENTE) ------------------
-        const btnAgregar = document.getElementById('btnAgregarImagen');
-        const inputUrl = document.getElementById('inputImagen');
-        const galeria = document.getElementById('galeria');
-
-        if(btnAgregar) {
-            btnAgregar.addEventListener('click', function() {
-                const url = inputUrl.value;
-                if (url === "") { alert("Por favor, ingresa una URL válida."); return; }
-                
-                const colDiv = document.createElement('div');
-                colDiv.className = 'col-6 col-md-4 col-lg-3';
-                const nuevaImagen = document.createElement('img');
-                nuevaImagen.src = url;
-                nuevaImagen.className = 'img-fluid rounded shadow-sm';
-                nuevaImagen.onerror = function() { alert("URL inválida."); colDiv.remove(); };
-                
-                colDiv.appendChild(nuevaImagen);
-                galeria.appendChild(colDiv);
-                inputUrl.value = '';
-            });
-        }
-
-        // ------------------ LÓGICA LISTA DE TAREAS (EXISTENTE) ------------------
-        const btnEliminar = document.getElementById("btnEliminarPrimero");
-        if(btnEliminar){
-            btnEliminar.addEventListener("click", function () {
-                const lista = document.getElementById("listaTareas");
-                if (lista.firstElementChild) lista.firstElementChild.remove();
-            });
-        }
-
-        const btnAddTarea = document.getElementById("btnAgregarTarea");
-        if(btnAddTarea){
-            btnAddTarea.addEventListener("click", function () {
-                const texto = document.getElementById("inputNuevaTarea").value.trim();
-                if (texto !== "") {
-                    const nuevaTarea = document.createElement("li");
-                    nuevaTarea.classList.add("list-group-item");
-                    nuevaTarea.textContent = texto;
-                    document.getElementById("listaTareas").appendChild(nuevaTarea);
-                    document.getElementById("inputNuevaTarea").value = "";
-                }
-            });
-        }
-    </script>
+        actualizarCarrito();
+    });
+});
+</script>
 
 </body>
 </html>
